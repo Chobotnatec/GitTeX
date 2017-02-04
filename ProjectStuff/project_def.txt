@@ -1,0 +1,129 @@
+
+
+
+Common Reasons for side effect/unsolicited behaviour:
+Missing trace:
+  Missing trace to requirement which is requirement supposed to satisfy.
+cause:
+  Author forgot to add trace
+solution:
+  add trace
+
+Wrong design
+  Wrong decomposition of problems often leads to many undocumented interactions which are hard to track and identify.
+cause:
+  Wrong decision during decision how to partition the system.
+solution:
+  Change decomposition of the higher requirements and rewrite.
+
+Missing Upstream requirement
+  Missing requirement which would specify system architecture.
+cause:
+  Some system level architecture decision does not have to be obvious to be needed to define. Non-critical requirements can be left to be derived requirements.
+solution:
+  request adding new system requirement as feedbeck from sofware requrement process
+
+Consuption of system resource
+  Some finite system resource is consumed
+cause:
+  Too small detail in the system requirements specification so it is not obvious why where to trace
+solution:
+  Put more detail in system rq e.g add requirement of max 6timers based and trace to requirement for chosen CPU.
+
+
+Reason fon incompatibility:
+Temporal incompatibility
+Outcome of work in progress on satisfaction of requirements.
+cause:
+Partial solution baseline on one part of requirements
+solution:
+finish the rework
+
+Too Complex problem
+Set of the connected requirements for satisfaction of certain requirement is too large too understand and define well.
+cause:
+Chosen too few levels of requirements
+solution:
+Try to make better partitioning of the requierments and decompose them better.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Alg:
+
+
+s z Uncovered;
+nh <- gen(s);
+
+add(h)
+trace(h,s)
+findSide(h,s)
+
+
+
+
+git policy:
+-no pushing to master
+
+to review something:
+
+author:
+  -push to: remote with comment for-review revieweres and approver
+
+  -will be checked for fast forward from master
+  -will send email to everyone with reff
+
+
+
+reviewers:
+  -fetch rev and will start to make comments.
+  -all other changes are forbidden
+
+author:
+  -fetches comments, runs difftool and edits his commit.
+  -merging his changes back to commented code to publish them.
+  -when done commits with comment done.
+
+aprover:
+  -when done adds "approved" to message, commits and pushes
+
+
+  todo:
+  -server side hook to inform about new review
+  -server side hook to check changes in review to be only comments, for reviewers
+
+  -server side hook to prevent pushing to master
+  -server side hook to get if approved message appeared push it into the master only if ff
+  is possible but pushes as no-ff  with summary of changes
+
+key points:
+  -text studio will show missing references, traces etc. and other syntax errors
+  -only aprover can write <approved> as commit message
+  -if previous commit is <approved> can merged to master
+
+
+
+
+
+
+
+
+
+
+
+
+
