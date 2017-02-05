@@ -1,17 +1,19 @@
-This project consist of several parts which together shall provide formally proven implementation of DO178c proccesses. Such Implementation shall allow enough flexibility to fit project of any size and software assurance level up to level A. The actual level of software assurance will be dependent on implementation and rigor of the certain subprocceses which are left for users to implement by themself. At the same time implementation will be focused on speed and cost reduction of development by elimination of hard to perform, unnessesary, or harmful proccesses and practises. The main requirements of the project are following:
+This project shall provide formally proven implementation of DO178c proccesses. And tools needed for this implementation. Such Implementation shall allow enough flexibility to fit project of any size and software assurance level up to level A. The actual level of software assurance will be dependent on implementation and rigor of the certain subprocceses which are left for users to implement by themself. At the same time implementation will be focused on speed and cost reduction of development by elimination of hard to perform, unnessesary, or harmful proccesses and practises. The main requirements of the project are following:
 
    1. Formal model of developement based on DO178c standart consisting of formal definition of inputs and outputs of the DO178c processes and formal definition of the goal of each of the process shall be created. 
 
 rationale: Those two parts will together define do178c development problem, which will serve as basis for further development of algorithm for solving this problem.
 
-   2. Formally verified generic algorithm for solving previously defined DO178c developement problem shall be created. If such algorithm will relly on sub algorihtms/functions their complexity and possibility of automatization shall be assesset and presented.
+   2. Formally verified generic algorithm for solving previously defined DO178c developement problem shall be created.
+   2.1. If such algorithm will relly on sub algorihtms/functions their complexity and possibility of automatization shall be assesset and presented.
 
 rationale: The proof of algorithm correctnes will show that when the algorithm stops it will result in correct and DO178c certifiable software.
 
-   3. Actual, usable implementation of created algorithm shall be proposed, with use of existing industry standart tools when available, and purporse implemented tools when needed. Verification Tools which will fall under DO178c tool qualification shall be marked as such and developed under level of assurance needed for review tools used in development of software for assurance level A.
+   3. Actual, usable implementation of created algorithm shall be proposed, with use of existing industry standart tools when available, and purporse implemented tools when needed.
+   3.1. Verification Tools which will fall under DO178c tool qualification shall be marked as such and developed under level of assurance needed for review tools used in development of software for assurance level A.
 
-rationale: the formal algorithm will deal with abstract DO178 development problem, implementation of the problam into real development practise is thus needed.
+rationale: the formal algorithm will deal with abstract DO178 development problem, implementation of the problem into real development practise is thus needed.
 
-   4. The implementation of DO178c development shall use Git as underlying version control engine and TeX as syntax for typesetting of any text informations available. 
+   4. The implementation of DO178c proccesses shall use Git as underlying version control engine and TeX as syntax for typesetting of any text informations available.
 
 rationale: We want to declare basic direction in which should project go. Actualy properties of both Git an LaTeX and their potential usability in DO178c like development was the seed idea of this project.
