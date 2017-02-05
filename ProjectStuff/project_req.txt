@@ -1,0 +1,13 @@
+This project consist of several parts which together shall provide formally proven implementation of DO178c proccesses which would allow enough flexibility to fit project of any size and software assurance level up to level A, the actual level of software assurance will be depend on implementation and rigor of the certain subprocceses which are left for user to implement by themself. At the same time implementation will be focused on speed and cost reduction of development by elimination of hard to perform, unnessesary, or harmful proccesses and practises. The main requirements of the project are following:
+
+   1. Formal model of developement based on DO178c standart consisting of formal definition of inputs and outputs of the DO178c processes and formal definition of the goal of each of the process shall be created. 
+
+rationale: Those two parts will together define do178c development problem, which will serve as basis for further development of algorithm for solving this problem.
+
+   2. Formally verified generic algorithm for solving previously defined DO178c developement problem shall be created. If such algorithm will relly on sub algorihtms/functions their complexity and possibility of automatization shall be assesset and presented.
+
+rationale: The proof of algorithm correctnes will show. e.g that when the algorithm stops it will result in correct and DO178c certifiable software (alternatively algorithm will say that the problem is unsolvable). 
+
+   3. Actual, usable implementation of created algorithm will be proposed, with use of existing industry standart tools when available, and purporse implemented tools when needed shall be developed. Verification Tools which will fall under DO178c tool qualification procces tools shall be marked as such and developed under level of assurance which needed for review tools for software assurance level A.
+
+   4. The implementation of DO178c development shall use Git as underlying version control engine and TeX as syntax for typesetting of any text informations available. 
