@@ -1,4 +1,98 @@
 
+Formal definition
+
+   Software requirement process
+
+following chapter deals with formal definition software requirement process
+
+
+SR = {sr}
+
+USR = {SR}
+
+
+We define software development problem of finding for the input set SR of requirements, sets of HL high level requirements, and traces T = {(r,h)| r z SR, h z HL}  such that following statements are true.
+
+1.V h z HL, HighReq(h) = 1,.
+2. V h z HL, Clear(h,s) = 1.   s is semantics
+3. V s z SR, Covered(s, {t z T | t = (s, h), h z HL}  ) = 1.
+4. Compatible(HL)
+
+4. Compatibility() ~ Local compatibility & (no side effects & acyclic, one thing  & one place
+
+
+LocalCompatible(),
+NoSideEffects(),
+Acyclic(),
+-those principles are absolutely nessesary or Compatible(HL) becams untractable
+
+
+/def side effects
+We any observable effect on system except those covered by traced requirements HL or SR.
+example1: Sonsumption of hardware resource (without tracing to hardware specifing requirement)
+example2: Consumption of global variable value without tracing requirement defining its format.
+
+state of the alg
+HL                 -current set of the HL
+HL_w \subset HL;   -set of the HL which are defecting
+HL_c \subset HL;   -set of the HL which are in colision with some other
+HL_s \subset HL;   -set of HL which has side effects
+SR_u \subset SR;   -set of the SR which are not yet satisfied
+T                  -set of current traces
+
+  operations:
+add(h, As ) -w, -s,        //adding of new requirement
+remove(h, As ) +s, +c, -u,//removing whole requirement and traces to from it
+addTrace( t, As) +u, +s, -c,   //add trace between two requirements
+removeTrace(t,As) +s, +c, -u   //remove trace between two
+replace(h,As), -+s, -+c, -w, +-u   //change of the requirement
+
+verify(As, flags);
+
+
+makeConsistent(h, As) -clears flag and update sets
+makeConsistent(r, As) -clears flags and update sets
+
+addFlag(h) - adds suspision flags - to fix potential error
+
+consistent state:
+def. As={HL,HL_w,HL_c,HL_s,} is consistent only if:
+clear(h)  <==> h /notin HL_w, for all h from HL,
+/and localCompatible(h) <==> h/notin HL_c, for all h /in HL,
+/and noSidEffect(h) <==> h/ notin HL_s, for all h /in HL,
+/and Covered(SR)  <==> SR/ notin SR_u, for all s /in SR,
+
+Init state:
+HL <- {};
+HL_w <- {};
+HL_c <- {};
+HL_s <- {};
+Sr_u <- SR;
+T<-{};
+
+End condition:
+HL_w == {};
+HL_c == {};
+HL_s == {};
+SR_u == {};
+
+\lemma init state is consistent.
+
+\lemma each state reached by any sequence operations followed by make consistent
+is consistent.
+
+\fact if end condition is reached it is consistent state.
+
+
+\declaration. any consistent state can be baselined.
+
+\lemma if end condition is reached the software requirement process is done.
+
+
+changeList <- changePlanner(As)
+
+
+
 
 
 Common Reasons for side effect/unsolicited behaviour:
